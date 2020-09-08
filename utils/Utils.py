@@ -5,7 +5,7 @@
 @Email       : yogehaoren@gmail.com
 @File        : Utils.py
 @Description : 
-@Version     : 0.1-dev
+@Version     : 0.2-dev
 """
 import requests
 import pickle
@@ -84,7 +84,7 @@ def load_upload_message_file(file_path: str):
 
 def upload_ncov_message(cookie, upload_message):
     header = dict(DEFAULT_HEADER.items() | UPLOAD_HEADER.items())
-    r = requests.post(UPLOAD_URL, cookies=cookie, headers=header)
+    r = requests.post(UPLOAD_URL, cookies=cookie, headers=header, data=upload_message)
     if r.json()['e'] == 0:
         print("上报成功")
     else:
