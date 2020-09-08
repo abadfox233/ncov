@@ -29,16 +29,6 @@ def main(argv):
             """
 
     try:
-        """
-            options, args = getopt.getopt(args, shortopts, longopts=[])
-
-            参数args：一般是sys.argv[1:]。过滤掉sys.argv[0]，它是执行脚本的名字，不算做命令行参数。
-            参数shortopts：短格式分析串。例如："hp:i:"，h后面没有冒号，表示后面不带参数；p和i后面带有冒号，表示后面带参数。
-            参数longopts：长格式分析串列表。例如：["help", "ip=", "port="]，help后面没有等号，表示后面不带参数；ip和port后面带冒号，表示后面带参数。
-
-            返回值options是以元组为元素的列表，每个元组的形式为：(选项串, 附加参数)，如：('-i', '192.168.0.1')
-            返回值args是个列表，其中的元素是那些不含'-'或'--'的参数。
-        """
         opts, args = getopt.getopt(argv, "hu:p:f:c:", ["help", "username=", "password=", "message_file=", "cookie="])
 
     except getopt.GetoptError:
